@@ -1,0 +1,23 @@
+<fieldset>
+  <form (submit)="onSubmit()" #form="ngForm">
+    <div>
+      <label class="label-left" for="email">*Email</label>
+      <input
+        type="text"
+        name="email"
+        required
+        [(ngModel)]="user.email"
+      >
+    </div>
+    <div>
+      <label class="label-left" for="password">*Password</label>
+      <input
+        type="password"
+        name="password"
+        required
+        [(ngModel)]="user.password"
+      >
+    </div>
+    <button class="btn-login" [disabled]="form.invalid">Login</button>
+  </form>
+</fieldset>

@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+section {
+  width: 90%;
+  margin: 10px auto;
+}
+
+fieldset {
+  border: 0px;
+}
+
+input {
+  box-sizing: border-box;
+  width: 215px;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+  font-size: 1em;
+}
+
+.userEntry {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 46%;
+  margin: 2%;
+  padding: 10px 2%;
+  vertical-align: top;
+  border: 1px solid gray;
+}
+
+.label-left {
+  display: inline-block;
+  width: 135px;
+  margin-right: 8px;
+  text-align: right;
+}
+
+.btn-login, .btn-register {
+  width:100%;
+  padding: 2px;
+  font-size: 1em;
+  color: ghostwhite;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.btn-login {
+  background-color: green;
+}
+
+.btn-register {
+  background-color: blue;
+}
+
+.warning {
+  margin: 0px auto 10px;
+  text-align: center;
+  color: red;
+}
