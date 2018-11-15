@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('user submitted', this.user);
     this.auth.login(this.user)
       .subscribe(
         () => { this.router.navigateByUrl('/dashboard') },

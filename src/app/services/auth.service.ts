@@ -34,7 +34,7 @@ export class AuthService {
     const userId = this.cookieService.get('userId');
     const session = this.cookieService.get('session');
 
-    return expired && userId && session && Date.now() < expired;
+    return expired && userId && session && expired > Date.now();
   }
 
 }

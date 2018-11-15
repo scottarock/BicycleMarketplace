@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import * as fromHome from './home';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import * as fromMarketplace from './marketplace';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,14 @@ const routes: Routes = [
   {
     path: 'dashboard',
     pathMatch: 'full',
-    component: DashboardComponent,
+    component: fromMarketplace.DashboardComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'browse',
+    pathMatch: 'full',
+    component: fromMarketplace.BrowseComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

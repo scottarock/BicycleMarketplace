@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import * as fromHome from './home';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import * as fromMarketplace from './marketplace';
+
+import { AuthGuard } from '../auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...fromHome.components,
-    DashboardComponent
+    ...fromMarketplace.components
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     CookieModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

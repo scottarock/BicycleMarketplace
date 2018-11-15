@@ -2,8 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const logger = require('morgan');
 const path = require('path');
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 
 const app = express();
 
@@ -25,6 +26,7 @@ require('./server/config/database');
 app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
+  .use(logger('dev'))
   .use(function(request, response, next) {
     // simple custom middleware to report requests
     console.log(`incoming request for ${request.url}`);

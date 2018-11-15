@@ -5,19 +5,23 @@ module.exports = {
 
   login(request, response) {
     const { email, password } = request.body;
-    User.findOne({ email })
+    console.log(`finding ${email}`);
+    User.findOne({ email: email })
       .then( user => {
-        try {
-          return user.validatePassword(password, user.password)
-            .then(valid => {
-              if (!valid) throw new Error();
-              completeLogin(request, response, user);
-            })
-        } catch(e) {
-          throw new Error();
-        }
+        console.log(`found ${email}`);
+        if ( !user ) { throw Error(); }
+
+        // found the user that matches the email, now test password
+        return User.validatePassword(password, user.password)
+          .then( passwordMatched => {
+            console.log(`authentication matched -> ${passwordMatched}`);
+            if ( !passwordMatched ) { throw Error() }
+            // handle log in
+            completeLogin(request, response, user);
+          });
       })
       .catch( error => {
+        console.log(`login of ${email} failed`);
         response
           .status(Http.Unauthorized)
           .json({ message: 'invalid email/password combination' });
