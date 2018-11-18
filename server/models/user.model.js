@@ -34,6 +34,12 @@ const userSchema = new Schema({
     required: [true, 'Password is required'],
     minlength: [8, 'password must be at least 8 characters long'],
   },
+  bicycles: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Bicycle',
+    }
+  ]
   // TODO: add bicycles array from bicycle model
 
 });

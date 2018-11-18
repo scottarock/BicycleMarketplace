@@ -12,6 +12,7 @@ import { AuthService } from '../../services';
 export class LoginComponent implements OnInit {
 
   user: User = new User();
+  errors: string = null;
 
   constructor(
     private auth: AuthService,
@@ -19,13 +20,15 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.user.email = 'bob@roll.com';
+    this.user.password = 'password';
   }
 
   onSubmit() {
     this.auth.login(this.user)
       .subscribe(
         () => { this.router.navigateByUrl('/dashboard') },
-        errors => { console.log(errors) }
+        errors => { this.errors = errors.error.message }
       )
   }
 

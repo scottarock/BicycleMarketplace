@@ -1,0 +1,68 @@
+<div class="gray padded bordered list">
+  <h2>Edit/Delete Listings</h2>
+  <fieldset class="white padded bordered spaced" *ngFor="let bike of bicycles">
+    <form #form="ngForm">
+
+      <div class="one-quarter padded">
+        <p>image will go here</p>
+      </div>
+
+      <div class="one-half padded">
+        <div>
+          <label for="title">Title</label><br>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            [(ngModel)]="bike.title"
+          >
+        </div>
+        <div>
+          <label for="description">Description</label><br>
+          <textarea
+            id="description"
+            name="description"
+            required
+            maxlength="200"
+            [(ngModel)]="bike.description"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="one-quarter padded">
+        <div>
+          <label for="price">Price</label><br>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            required
+            min="1"
+            [(ngModel)]="bike.price"
+          >
+        </div>
+        <div>
+          <label for="">Location</label><br>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            required
+            [(ngModel)]="bike.location"
+          >
+        </div>
+        <button
+          class="btn-update"
+          (click)="onUpdate(bike)"
+          [disabled]="form.invalid || form.pristine"
+        >Update</button>
+        <button
+          class="btn-delete"
+          (click)="onDelete(bike)"
+        >Delete</button>
+      </div>
+
+    </form>
+  </fieldset>
+</div>

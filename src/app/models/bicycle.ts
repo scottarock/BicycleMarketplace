@@ -1,3 +1,5 @@
+import { User } from './user';
+
 export class Bicycle {
 
   _id: string;
@@ -6,7 +8,7 @@ export class Bicycle {
   location: string;
   price: number;
   image: any;
-  user: string;
+  user: User;
 
   constructor() { }
 

@@ -8,7 +8,7 @@ export class User {
   email: string;
   password: string;
   passwordConfirm: string;
-  bicycleListings: Bicycle[];
+  bicycles: Bicycle[];
 
   constructor() { }
 

@@ -1,4 +1,21 @@
 <section>
   <app-navigation></app-navigation>
-  <p>Dashboard!</p>
+  <app-bicycle-new
+    (newBicycle)="addBicycle($event)"
+  ></app-bicycle-new>
+  <app-bicycle-update-list
+    [bicycles]="user.bicycles"
+    (updateBicycle)="updateBicycle($event)"
+    (deleteBicycle)="deleteBicycle($event)"
+  ></app-bicycle-update-list>
+  <div
+    class="modal"
+    [ngStyle]="{'display': modalDisplay}"
+    (click)="closeModal($event)"
+  >
+    <div class="modal-content" (click)="modalClick($event)">
+      <span class="close-modal" (click)="closeModal($event)">&times;</span>
+      <p>{{ modalMessage }}</p>
+    </div>
+  </div>
 </section>

@@ -24,8 +24,12 @@ const bicycleSchema = new Schema({
     trim: true,
     required: [true, 'Location is required'],
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: [true, 'User is required'],
+  },
   // TODO: image for the bicycle
-  // TODO: add the link to the user
 
 })
 

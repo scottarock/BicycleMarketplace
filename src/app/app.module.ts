@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import * as fromHome from './home';
 import * as fromMarketplace from './marketplace';
+import * as fromBicycle from './bicycle';
 
 import { AuthGuard } from '../auth.guard';
 
@@ -16,7 +17,8 @@ import { AuthGuard } from '../auth.guard';
   declarations: [
     AppComponent,
     ...fromHome.components,
-    ...fromMarketplace.components
+    ...fromMarketplace.components,
+    ...fromBicycle.components
   ],
   imports: [
     BrowserModule,

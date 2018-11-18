@@ -1,0 +1,61 @@
+<div class="gray padded bordered spaced">
+  <h2>Create Bicycle Listing</h2>
+  <fieldset class="white padded bordered spaced">
+    <form (submit)="onSubmit(form)" #form="ngForm">
+
+      <div class="one-quarter padded">
+        <p>image capture here</p>
+      </div>
+
+      <div class="one-half padded">
+        <div>
+          <label for="title">Title</label><br>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            [(ngModel)]="bicycle.title"
+          >
+        </div>
+        <div>
+          <label for="description">Description</label><br>
+          <textarea
+            id="description"
+            name="description"
+            required
+            maxlength="200"
+            [(ngModel)]="bicycle.description"
+            >
+          </textarea>
+        </div>
+      </div>
+
+      <div class="one-quarter padded">
+        <div>
+          <label for="price">Price</label><br>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            required
+            min="1"
+            [(ngModel)]="bicycle.price"
+          >
+        </div>
+        <div>
+          <label for="location">Location</label><br>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            required
+            [(ngModel)]="bicycle.location"
+          >
+        </div>
+        <button class="btn-create" [disabled]="form.invalid">CREATE</button>
+      </div>
+
+    </form>
+  </fieldset>
+</div>

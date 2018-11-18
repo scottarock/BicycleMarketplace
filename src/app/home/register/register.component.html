@@ -1,8 +1,9 @@
-<fieldset>
+<fieldset class="borderless">
   <form (submit)="onSubmit()" #form="ngForm">
     <div>
-      <label class="label-left" for="firstName">*First Name</label>
+      <label class="label-left one-third" for="firstName">*First Name</label>
       <input
+        class="two-thirds"
         type="text"
         name="firstName"
         required
@@ -16,8 +17,9 @@
       </div>
     </div>
     <div>
-      <label class="label-left" for="lastName">*Last Name</label>
+      <label class="label-left one-third" for="lastName">*Last Name</label>
       <input
+        class="two-thirds"
         type="text"
         name="lastName"
         required
@@ -31,8 +33,9 @@
       </div>
     </div>
     <div>
-      <label class="label-left" for="email">*Email</label>
+      <label class="label-left one-third" for="email">*Email</label>
       <input
+        class="two-thirds"
         type="text"
         name="email"
         required
@@ -46,8 +49,9 @@
       </div>
     </div>
     <div>
-      <label class="label-left" for="password">*Password</label>
+      <label class="label-left one-third" for="password">*Password</label>
       <input
+        class="two-thirds"
         type="password"
         name="password"
         required
@@ -65,8 +69,9 @@
       </div>
     </div>
     <div>
-      <label class="label-left" for="passwordConfirm">*Confirm Password</label>
+      <label class="label-left one-third" for="passwordConfirm">*Confirm Password</label>
       <input
+        class="two-thirds"
         type="password"
         name="passwordConfirm"
         required

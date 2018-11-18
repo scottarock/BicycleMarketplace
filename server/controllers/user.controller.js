@@ -6,14 +6,22 @@ module.exports = {
   index(request, response){
     // get all users - administrative type usage
     User.find({})
-      .then( users => response.json(users) )
+      .then( users => {
+        response.json(users.filter( user => {
+          delete user.password;
+          return user;
+        }));
+      })
       .catch( console.log );
   },
 
   create(request, response){
     // create a new user - administrative type usage
     User.create(request.body)
-      .then( user => response.json(user) )
+      .then( user => {
+        delete user.password;
+        response.json(user);
+      })
       .catch( error => {
         // assumes validation errors
         response
@@ -25,7 +33,11 @@ module.exports = {
   show(request, response){
     // get specified user
     User.findById(request.params.userId)
-      .then( user => response.json(user) )
+      .populate('bicycles')
+      .then( user => {
+        delete user.password;
+        response.json(user);
+      })
       .catch( console.log );
   },
 
@@ -36,8 +48,12 @@ module.exports = {
       { $set: request.body },
       { new: true }
     )
-      .then( user => response.json(user) )
+      .then( user => {
+        delete user.password;
+        response.json(user);
+      })
       .catch( error => {
+        // assumes validation errors
         response
           .status(Http.UnprocessableEntity)
           .json(Object.keys(error.errors).map(key => error.errors[key].message));

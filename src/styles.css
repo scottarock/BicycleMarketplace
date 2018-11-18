@@ -11,58 +11,6 @@ section {
   margin: 10px auto;
 }
 
-fieldset {
-  border: 0px;
-}
-
-input {
-  box-sizing: border-box;
-  width: 215px;
-  margin-bottom: 10px;
-  padding: 2px 4px;
-  font-size: 1em;
-}
-
-.userEntry {
-  display: inline-block;
-  box-sizing: border-box;
-  width: 46%;
-  margin: 2%;
-  padding: 10px 2%;
-  vertical-align: top;
-  border: 1px solid gray;
-}
-
-.label-left {
-  display: inline-block;
-  width: 135px;
-  margin-right: 8px;
-  text-align: right;
-}
-
-.btn-login, .btn-register {
-  width:100%;
-  padding: 2px;
-  font-size: 1em;
-  color: ghostwhite;
-  border: 1px solid gray;
-  border-radius: 2px;
-}
-
-.btn-login {
-  background-color: green;
-}
-
-.btn-register {
-  background-color: blue;
-}
-
-.warning {
-  margin: 0px auto 10px;
-  text-align: center;
-  color: red;
-}
-
 nav ul {
   padding: 6px 0px;
   background-color: whitesmoke;
@@ -77,4 +25,194 @@ nav li {
 
 nav li:last-child {
   border-right: 0px;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+  font-size: 1em;
+  border: 1px solid darkgray;
+  border-radius: 2px;
+}
+
+textarea {
+  resize: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+  font-size: 1em;
+  border: 1px solid darkgray;
+  border-radius: 2px;
+}
+
+button {
+  width:100%;
+  margin-bottom: 10px;
+  padding: 2px;
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+button:disabled {
+  background-color: gainsboro;
+}
+
+/* for the login and registration components */
+.userEntry {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 46%;
+  margin: 2%;
+  padding: 10px 2%;
+  vertical-align: top;
+  border: 1px solid gray;
+}
+
+.label-left {
+  display: inline-block;
+  padding-right: 1%;
+  text-align: right;
+  vertical-align: middle;
+}
+
+/* specific button coloring and sizing */
+.btn-login {
+  color: ghostwhite;
+  background-color: green;
+}
+
+.btn-register {
+  color: ghostwhite;
+  background-color: blue;
+}
+
+.btn-create {
+  padding: 15px 0px;
+  color: ghostwhite;
+  background-color: forestgreen;
+}
+
+.btn-update {
+  color: ghostwhite;
+  background-color: darkgreen;
+}
+
+.btn-delete {
+  color: ghostwhite;
+  background-color: red;
+}
+
+/* for the list view of the bicycle ads */
+.list {
+  max-height: 450px;
+  overflow-y: scroll;
+}
+
+/* layout sizing */
+.one-third {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 33%;
+}
+
+.two-thirds {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 67%;
+}
+
+.one-quarter {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 25%;
+  vertical-align: top;
+}
+
+.one-half {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 50%;
+  vertical-align: top;
+}
+
+/* general extra classes */
+.spaced {
+  margin-bottom: 10px;
+}
+
+.padded {
+  padding: 2%;
+}
+
+.bordered {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.borderless {
+  border: 0px;
+}
+
+.warning {
+  margin: 0px auto 10px;
+  text-align: center;
+  color: red;
+}
+
+.gray {
+  background-color: gainsboro;
+}
+
+.white {
+  background-color: white;
+}
+
+/* for displaying modal */
+/* background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  padding-top: 20%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* content */
+.modal-content {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  background-color: #fefefe;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.modal-content p {
+  margin: 30px auto;
+}
+
+/* modal close button */
+.close-modal {
+  float: right;
+  vertical-align: baseline;
+  font-size: 28px;
+  font-weight: bold;
+  color: darkgray;
+}
+
+.close-modal:hover, .close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
