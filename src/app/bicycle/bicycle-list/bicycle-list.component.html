@@ -1,3 +1,45 @@
-<p>
-  bicycle-list works!
-</p>
+<div class="gray padded bordered long-list">
+
+  <div>
+    <label class="label-left one-quarter">Search:</label>
+    <input
+      type="text"
+      [(ngModel)]="filter.title"
+    >
+    <button
+      style="width:auto;margin-left:1%;padding:2px 4px;"
+      (click)="filter.title = null"
+    >&times;</button>
+  </div>
+
+  <fieldset
+    class="white padded bordered spaced"
+    *ngFor="let bike of bicycles | search: filter"
+  >
+
+    <div class="one-quarter">
+      image will go here
+    </div>
+
+    <div class="one-half">
+      <h2>{{ bike.title }}</h2>
+      <p>{{ bike.description }}</p>
+    </div>
+
+    <div class="one-quarter centered">
+      <h1>{{ bike.price | currency: "USD" }}</h1>
+      <p>{{ bike.location }}</p>
+      <button
+        class="btn-contact"
+        (click)="onContact(bike)"
+        *ngIf="bike.user._id !== currentUser._id"
+      >Contact</button>
+      <button
+        class="btn-delete"
+        (click)="onDelete(bike)"
+        *ngIf="bike.user._id === currentUser._id"
+      >Delete</button>
+    </div>
+
+  </fieldset>
+</div>

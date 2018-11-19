@@ -18,6 +18,12 @@ export class BicycleNewComponent implements OnInit {
   ngOnInit() {
   }
 
+  fileChange(event) {
+    if ( event.target.files && event.target.files.length > 0 ) {
+      this.bicycle.image = event.target.files[0];
+    }
+  }
+
   onSubmit(form: NgForm): void {
     this.newBicycle.emit(this.bicycle);
     this.bicycle = new Bicycle();

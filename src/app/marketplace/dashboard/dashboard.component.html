@@ -4,7 +4,7 @@
     (newBicycle)="addBicycle($event)"
   ></app-bicycle-new>
   <app-bicycle-update-list
-    [bicycles]="user.bicycles"
+    [bicycles]="currentUser.bicycles"
     (updateBicycle)="updateBicycle($event)"
     (deleteBicycle)="deleteBicycle($event)"
   ></app-bicycle-update-list>

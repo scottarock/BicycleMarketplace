@@ -63,6 +63,10 @@ button:disabled {
   background-color: gainsboro;
 }
 
+p {
+  margin: 10px 0px;
+}
+
 /* for the login and registration components */
 .userEntry {
   display: inline-block;
@@ -79,6 +83,13 @@ button:disabled {
   padding-right: 1%;
   text-align: right;
   vertical-align: middle;
+}
+
+/* error message class for forms */
+.warning {
+  margin: 0px auto 10px;
+  text-align: center;
+  color: red;
 }
 
 /* specific button coloring and sizing */
@@ -108,9 +119,18 @@ button:disabled {
   background-color: red;
 }
 
+.btn-contact {
+  background-color: yellow;
+}
+
 /* for the list view of the bicycle ads */
 .list {
   max-height: 450px;
+  overflow-y: scroll;
+}
+
+.long-list {
+  max-height: 650px;
   overflow-y: scroll;
 }
 
@@ -159,10 +179,8 @@ button:disabled {
   border: 0px;
 }
 
-.warning {
-  margin: 0px auto 10px;
+.centered {
   text-align: center;
-  color: red;
 }
 
 .gray {

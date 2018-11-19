@@ -7,7 +7,7 @@ export class Bicycle {
   description: string;
   location: string;
   price: number;
-  image: any;
+  image: string | any;
   user: User;
 
   constructor() { }

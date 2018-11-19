@@ -1,5 +1,20 @@
 <section>
   <app-navigation></app-navigation>
-  <p>Browsing!</p>
-  <app-bicycle-list></app-bicycle-list>
+  <app-bicycle-list
+    [bicycles]="bicycles"
+    [currentUser]="currentUser"
+    (contactUser)="contactUser($event)"
+    (deleteBicycle)="deleteBicycle($event)"
+  ></app-bicycle-list>
+  <div
+    class="modal"
+    [ngStyle]="{'display': modalDisplay}"
+    (click)="closeModal($event)"
+  >
+    <div class="modal-content" (click)="modalClick($event)">
+      <span class="close-modal" (click)="closeModal($event)">&times;</span>
+      <p>{{ modalMessage1 }}</p>
+      <p>{{ modalMessage2 }}</p>
+    </div>
+  </div>
 </section>

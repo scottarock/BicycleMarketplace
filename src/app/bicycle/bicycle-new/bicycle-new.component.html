@@ -4,7 +4,15 @@
     <form (submit)="onSubmit(form)" #form="ngForm">
 
       <div class="one-quarter padded">
-        <p>image capture here</p>
+        <label for="image">Image</label><br>
+        <input
+          style="height:160px;width:100%"
+          type="file"
+          id="image"
+          name="image"
+          (change)="fileChange($event)"
+          (onDrop)="fileChange($event)"
+        >
       </div>
 
       <div class="one-half padded">

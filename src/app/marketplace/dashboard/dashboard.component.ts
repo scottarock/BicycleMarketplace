@@ -10,7 +10,7 @@ import { UserService, BicycleService } from '../../services';
 })
 export class DashboardComponent implements OnInit {
 
-  user: User = new User();
+  currentUser: User = new User();
   modalDisplay: string = 'none';
   modalMessage: string = '';
 
@@ -22,15 +22,15 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.userService.getUser()
       .subscribe( user => {
-        this.user = user;
+        this.currentUser = user;
       });
   }
 
   addBicycle(bicycle: Bicycle): void {
-    bicycle.user = this.user;
+    bicycle.user = this.currentUser;
     this.bicycleService.addBicycle(bicycle)
       .subscribe( newBike => {
-        this.user.bicycles.push(newBike);
+        this.currentUser.bicycles.push(newBike);
       });
   }
 
@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
   deleteBicycle(bicycle: Bicycle): void {
     this.bicycleService.deleteBicycle(bicycle)
       .subscribe( deletedBicycle => {
-        this.user.bicycles = this.user.bicycles.filter( bike => bike._id !== deletedBicycle._id );
+        this.currentUser.bicycles = this.currentUser.bicycles.filter( bike => bike._id !== deletedBicycle._id );
       })
   }
 

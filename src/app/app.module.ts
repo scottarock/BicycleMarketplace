@@ -12,13 +12,15 @@ import * as fromMarketplace from './marketplace';
 import * as fromBicycle from './bicycle';
 
 import { AuthGuard } from '../auth.guard';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...fromHome.components,
     ...fromMarketplace.components,
-    ...fromBicycle.components
+    ...fromBicycle.components,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { AuthGuard } from '../auth.guard';
     AppRoutingModule,
     CookieModule.forRoot()
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, SearchPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
