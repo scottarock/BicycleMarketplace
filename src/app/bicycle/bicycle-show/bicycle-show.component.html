@@ -1,0 +1,22 @@
+<div class="gray padded bordered spaced">
+
+  <fieldset
+    class="white padded bordered spaced"
+  >
+
+    <div class="one-quarter">
+      image will go here
+    </div>
+
+    <div class="one-half">
+      <h2>{{ bicycle.title }}</h2>
+      <p>{{ bicycle.description }}</p>
+    </div>
+
+    <div class="one-quarter centered">
+      <h1>{{ bicycle.price | currency: "USD" }}</h1>
+      <p>{{ bicycle.location }}</p>
+    </div>
+
+  </fieldset>
+</div>

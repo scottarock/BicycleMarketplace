@@ -13,6 +13,7 @@ import * as fromBicycle from './bicycle';
 
 import { AuthGuard } from '../auth.guard';
 import { SearchPipe } from './search.pipe';
+import { BicycleShowComponent } from './bicycle/bicycle-show/bicycle-show.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { SearchPipe } from './search.pipe';
     ...fromHome.components,
     ...fromMarketplace.components,
     ...fromBicycle.components,
-    SearchPipe
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

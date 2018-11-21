@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user.email = 'bob@roll.com';
-    this.user.password = 'password';
   }
 
   onSubmit() {

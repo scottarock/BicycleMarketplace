@@ -234,3 +234,7 @@ p {
   text-decoration: none;
   cursor: pointer;
 }
+
+.blue {
+  color: blue;
+}
